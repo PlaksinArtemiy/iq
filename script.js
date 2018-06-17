@@ -46,7 +46,6 @@
 
 			// Обработка формы
 			$( "#target" ).click(function() {
-			console.log($("#calcForm").serialize());
 				$.ajax({
 					url: "calc.php",
 					type: "POST",

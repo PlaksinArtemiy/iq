@@ -5,13 +5,21 @@
 html {
 	height: 100%;
 }
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+ footer, header, nav {
 	display: block;
 }
 body {
 	font: 12px/18px Arial, sans-serif;
 	height: 100%;
+	padding: 0px 5px 0px 5px;
 }
+
+input[type="text"],
+input[type="number"],
+select {
+	width: 100px;
+}
+
 .wrapper {
 	width: 100%;
 	min-width: 500px;
@@ -45,16 +53,17 @@ body {
 }
 
 /**
- * Navigatin
+ * Navigation
  */
 .nav__list {
     margin: 0;
     padding: 0;
 }
-.nav__list a {
+.nav__list__item a {
     padding: 1em 2.5em;
     transition: all .25s ease-in-out;
 }
+
 .nav__list__item {
     border-style: solid;
     border-width: 0 0 1px;
@@ -71,7 +80,9 @@ body {
         border-width: 0 1px 0 0;
     }
     .nav__list > .nav__list__item,
-    .nav__list > .nav__list__item a {
+    .nav__list > .nav__list__item a,
+	.nav__list > .nav__list__item--footer,
+	.nav__list > .nav__list__item--footer a {
 		float:left;
     }
 }
@@ -87,12 +98,23 @@ body {
 .nav .nav__list__item--active {
     background-color: #eb5017;
 }
-.nav a {
+
+.nav__list__item a {
     color: #FFF;
     text-decoration: none;
 }
-.nav a:hover, .nav a:active, .nav a:focus {
+.nav__list__item a:hover, .nav__list__item a:active, .nav__list__item a:focus {
     background-color: #EB5017;
+}
+
+.nav .nav__list__item--footer {
+    display: block;
+}
+
+.nav__list__item--footer a {
+    padding: 1em 2.5em;
+	color: #fff;
+	text-decoration: underline;
 }
 
 .clearfix:before,
@@ -130,8 +152,36 @@ clear: both;
 	padding: 25px;
 }
 
+/* Хлебные крошки */
+.breadcrumbs {
+	margin-bottom: 30px;
+	padding: 0;
+	list-style: none;
+}
 
-/*
+.breadcrumbs li {
+	float: left;
+}
+
+.breadcrumbs a {
+	color: #000;
+	text-decoration: underline;
+}
+
+.breadcrumbs a:hover {
+	color: #EB5017;
+}
+
+.breadcrumbs li:not(:last-child):after {
+	content: ' - ';
+	display: inline-block;
+	width: 5px;
+	height: 5px;
+	margin: 0px 5px
+}
+
+
+/* calc form
 -----------------------------------------------------------------------------*/
 .calc__form {
 	display: table;
@@ -145,19 +195,55 @@ clear: both;
 	display: table-row;
 }
 .calc__form__body--cell {
-	border: 1px solid #999999;
 	display: table-cell;
-	padding: 3px 10px;
+	padding: 16px;
 }
 
+.calc__form__body--cell-label {
+	width: 20%;
+	text-align: right;
+}
+
+.calc__form__body--cell-slider {
+	width: 60%;
+}
+
+.calc--header {
+	color: #EB5017;
+	font-size: 16pt;
+	font-weight: 400;
+}
+
+.calc--button {
+ text-decoration:none; 
+ text-align:center; 
+ padding:9px 25px; 
+ border:solid 1px #c4c4c4; 
+ -webkit-border-radius:4px;
+ -moz-border-radius:4px; 
+ border-radius: 4px; 
+ font:13px Arial, Helvetica, sans-serif; 
+ font-weight:bold; 
+ color:#575757; 
+ background-color:#a8f7b5; 
+ background-image: -moz-linear-gradient(top, #a8f7b5 0%, #0ffc17 100%); 
+ background-image: -webkit-linear-gradient(top, #a8f7b5 0%, #0ffc17 100%); 
+ background-image: -o-linear-gradient(top, #a8f7b5 0%, #0ffc17 100%); 
+ background-image: -ms-linear-gradient(top, #a8f7b5 0% ,#0ffc17 100%); 
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0ffc17', endColorstr='#0ffc17',GradientType=0 ); 
+ background-image: linear-gradient(top, #a8f7b5 0% ,#0ffc17 100%);   
+ -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff; 
+ -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;  
+ box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;  
+  
+  }
 
 /* Footer
 -----------------------------------------------------------------------------*/
 .footer {
-	margin: -100px auto 0;
+	margin: -42px auto 0;
 	min-width: 500px;
-	height: 100px;
-	background: #BFF08E;
+	height: 42px;
 	position: relative;
 }
 

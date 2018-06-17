@@ -27,42 +27,48 @@
 		</div>
 
 		
-<nav class="nav nav--orange">
-    <ul class="nav__list clearfix">
-        <li class="nav__list__item"><a href="#">Кредитные карты</a></li>
-        <li class="nav__list__item nav__list__item--active"><a href="#">Вклады</a></li>
-        <li class="nav__list__item"><a href="#">Дебетовая карта</a></li>
-        <li class="nav__list__item"><a href="#">Страхование</a></li>
-        <li class="nav__list__item"><a href="#">Друзья</a></li>
-        <li class="nav__list__item"><a href="#">Интернет-банк</a></li>
-    </ul>
-</nav>
+		<nav class="nav nav--orange">
+			<ul class="nav__list clearfix">
+				<li class="nav__list__item"><a href="#">Кредитные карты</a></li>
+				<li class="nav__list__item nav__list__item--active"><a href="#">Вклады</a></li>
+				<li class="nav__list__item"><a href="#">Дебетовая карта</a></li>
+				<li class="nav__list__item"><a href="#">Страхование</a></li>
+				<li class="nav__list__item"><a href="#">Друзья</a></li>
+				<li class="nav__list__item"><a href="#">Интернет-банк</a></li>
+			</ul>
+		</nav>
 		
 	</header><!-- .header-->
 
 
-	
 	<div class="middle">
 
 		<div class="container">
 			<main class="content">
+				<ul class="breadcrumbs">
+					<li><a href="#">Главная</a></li>
+					<li><a href="#">Вклады</a></li>
+					<li>Калькулятор</li>
+				</ul>
+				<div class="clearfix"></div>
+				
 				<form id="calcForm" method="post">
 					<div class="calc__form">
 						<div class="calc__form__body">
 							<div class="calc__form__body--row">
-								<div class="calc__form__body--cell">Калькулятор</div>
+								<div class="calc__form__body--cell"><div class="calc--header">Калькулятор</div></div>
 							</div>
 							<div class="calc__form__body--row">
-								<div class="calc__form__body--cell">Дата оформления вклада</div>
+								<div class="calc__form__body--cell calc__form__body--cell-label">Дата оформления вклада</div>
 								<div class="calc__form__body--cell"><input type="text" name="dateCreate" id="datepicker" placeholder="дд.мм.гггг" required maxlength="10"></div>
 							</div>
 							<div class="calc__form__body--row">
-								<div class="calc__form__body--cell">Сумма вклада</div>
-								<div class="calc__form__body--cell"><input type="number" id="deposit-amount" value="1000" min="1000" max="3000000"></div>
-								<div class="calc__form__body--cell"><div id="slider-deposit-amount"></div></div>
+								<div class="calc__form__body--cell calc__form__body--cell-label">Сумма вклада</div>
+								<div class="calc__form__body--cell"><input type="number" id="deposit-amount" name="summ" value="1000" min="1000" max="3000000"></div>
+								<div class="calc__form__body--cell calc__form__body--cell-slider"><div id="slider-deposit-amount"></div></div>
 							</div>
 							<div class="calc__form__body--row">
-								<div class="calc__form__body--cell">Срок вклада</div>
+								<div class="calc__form__body--cell calc__form__body--cell-label">Срок вклада</div>
 								<div class="calc__form__body--cell">
 									<select name="duration">
 										<option value="1">1 год</option>
@@ -75,20 +81,20 @@
 								<div class="calc__form__body--cell">&nbsp;</div>
 							</div>
 							<div class="calc__form__body--row">
-								<div class="calc__form__body--cell">Пополнение вклада</div>
+								<div class="calc__form__body--cell calc__form__body--cell-label">Пополнение вклада</div>
 								<div class="calc__form__body--cell">
-									<input name="addToDeposit" type="radio" value="0" id="noAdd" checked><label for="noAdd"> Нет</label>
-									<input name="addToDeposit" type="radio" value="1" id="yesAdd"><label for="yesAdd"> Да</label>
+									<input name="addToDeposit" type="radio" value="no" id="noAdd" checked><label for="noAdd"> Нет</label>
+									<input name="addToDeposit" type="radio" value="yes" id="yesAdd"><label for="yesAdd"> Да</label>
 								</div>
 								<div class="calc__form__body--cell">&nbsp;</div>
 							</div>
 							<div class="calc__form__body--row">
-								<div class="calc__form__body--cell">Сумма пополнения вклада</div>
-								<div class="calc__form__body--cell"><input type="number" id="add-to-deposit-amount" value="1000" min="1000" max="3000000"></div>
-								<div class="calc__form__body--cell"><div id="slider-add-to-deposit-amount"></div></div>
+								<div class="calc__form__body--cell calc__form__body--cell-label">Сумма пополнения вклада</div>
+								<div class="calc__form__body--cell"><input type="number" name="summadd" id="add-to-deposit-amount" value="1000" min="1000" max="3000000"></div>
+								<div class="calc__form__body--cell calc__form__body--cell-slider"><div id="slider-add-to-deposit-amount"></div></div>
 							</div>
 							<div class="calc__form__body--row">
-								<div class="calc__form__body--cell"><div id="target">Рассчитать</div></div>
+								<div class="calc__form__body--cell calc__form__body--cell-label"><div class="calc--button" id="target">Рассчитать</div></div>
 								<div class="calc__form__body--cell">Результат: <div id="calcResult"></div></div>
 								<div class="calc__form__body--cell">&nbsp;</div>
 							</div>
@@ -106,7 +112,16 @@
 </div><!-- .wrapper -->
 
 <footer class="footer">
-	<strong>Footer:</strong> Mus elit Morbi mus enim lacus at quis Nam eget morbi. Et semper urna urna non at cursus dolor vestibulum neque enim. Tellus interdum at laoreet laoreet lacinia lacinia sed Quisque justo quis. Hendrerit scelerisque lorem elit orci tempor tincidunt enim Phasellus dignissim tincidunt. Nunc vel et Sed nisl Vestibulum odio montes Aliquam volutpat pellentesque. Ut pede sagittis et quis nunc gravida porttitor ligula.
+	<nav class="nav nav--orange">
+		<ul class="nav__list clearfix">
+			<li class="nav__list__item--footer"><a href="#">Кредитные карты</a></li>
+			<li class="nav__list__item--footer"><a href="#">Вклады</a></li>
+			<li class="nav__list__item--footer"><a href="#">Дебетовая карта</a></li>
+			<li class="nav__list__item--footer"><a href="#">Страхование</a></li>
+			<li class="nav__list__item--footer"><a href="#">Друзья</a></li>
+			<li class="nav__list__item--footer"><a href="#">Интернет-банк</a></li>
+		</ul>
+	</nav>
 </footer><!-- .footer -->
 
 </body>
