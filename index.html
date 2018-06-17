@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="script.js"></script>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+	<header class="header">
+		<div class="header__top">
+			<div class="header__top__logo"><a href="/"><img src="logo.jpg"></a></div>
+			<div class="header__top__contacts">
+				<p>8-800-100-5005</p>
+				<p>+7 (3452) 522-000</p>
+			</div>
+		</div>
+
+		
+<nav class="nav nav--orange">
+    <ul class="nav__list clearfix">
+        <li class="nav__list__item"><a href="#">Кредитные карты</a></li>
+        <li class="nav__list__item nav__list__item--active"><a href="#">Вклады</a></li>
+        <li class="nav__list__item"><a href="#">Дебетовая карта</a></li>
+        <li class="nav__list__item"><a href="#">Страхование</a></li>
+        <li class="nav__list__item"><a href="#">Друзья</a></li>
+        <li class="nav__list__item"><a href="#">Интернет-банк</a></li>
+    </ul>
+</nav>
+		
+	</header><!-- .header-->
+
+
+	
+	<div class="middle">
+
+		<div class="container">
+			<main class="content">
+				<form id="calcForm" method="post">
+					<div class="calc__form">
+						<div class="calc__form__body">
+							<div class="calc__form__body--row">
+								<div class="calc__form__body--cell">Калькулятор</div>
+							</div>
+							<div class="calc__form__body--row">
+								<div class="calc__form__body--cell">Дата оформления вклада</div>
+								<div class="calc__form__body--cell"><input type="text" name="dateCreate" id="datepicker" placeholder="дд.мм.гггг" required maxlength="10"></div>
+							</div>
+							<div class="calc__form__body--row">
+								<div class="calc__form__body--cell">Сумма вклада</div>
+								<div class="calc__form__body--cell"><input type="number" id="deposit-amount" value="1000" min="1000" max="3000000"></div>
+								<div class="calc__form__body--cell"><div id="slider-deposit-amount"></div></div>
+							</div>
+							<div class="calc__form__body--row">
+								<div class="calc__form__body--cell">Срок вклада</div>
+								<div class="calc__form__body--cell">
+									<select name="duration">
+										<option value="1">1 год</option>
+										<option value="2">2 года</option>
+										<option value="3">3 года</option>
+										<option value="4">4 года</option>
+										<option value="5">5 года</option>
+									</select>
+								</div>
+								<div class="calc__form__body--cell">&nbsp;</div>
+							</div>
+							<div class="calc__form__body--row">
+								<div class="calc__form__body--cell">Пополнение вклада</div>
+								<div class="calc__form__body--cell">
+									<input name="addToDeposit" type="radio" value="0" id="noAdd" checked><label for="noAdd"> Нет</label>
+									<input name="addToDeposit" type="radio" value="1" id="yesAdd"><label for="yesAdd"> Да</label>
+								</div>
+								<div class="calc__form__body--cell">&nbsp;</div>
+							</div>
+							<div class="calc__form__body--row">
+								<div class="calc__form__body--cell">Сумма пополнения вклада</div>
+								<div class="calc__form__body--cell"><input type="number" id="add-to-deposit-amount" value="1000" min="1000" max="3000000"></div>
+								<div class="calc__form__body--cell"><div id="slider-add-to-deposit-amount"></div></div>
+							</div>
+							<div class="calc__form__body--row">
+								<div class="calc__form__body--cell"><div id="target">Рассчитать</div></div>
+								<div class="calc__form__body--cell">Результат: <div id="calcResult"></div></div>
+								<div class="calc__form__body--cell">&nbsp;</div>
+							</div>
+						</div>
+					</div>
+
+				</form>
+			</main><!-- .content -->
+		</div><!-- .container-->
+
+
+
+	</div><!-- .middle-->
+
+</div><!-- .wrapper -->
+
+<footer class="footer">
+	<strong>Footer:</strong> Mus elit Morbi mus enim lacus at quis Nam eget morbi. Et semper urna urna non at cursus dolor vestibulum neque enim. Tellus interdum at laoreet laoreet lacinia lacinia sed Quisque justo quis. Hendrerit scelerisque lorem elit orci tempor tincidunt enim Phasellus dignissim tincidunt. Nunc vel et Sed nisl Vestibulum odio montes Aliquam volutpat pellentesque. Ut pede sagittis et quis nunc gravida porttitor ligula.
+</footer><!-- .footer -->
+
+</body>
+</html>
